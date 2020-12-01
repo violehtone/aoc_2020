@@ -11,7 +11,6 @@ def fixExpenseReport(entries):
       elif i + j == 2020:
         print(f"{i} and {j} sum to 2020")
         return i*j
-
   # If none matches, return 0
   return 0
 
@@ -30,11 +29,8 @@ def fixExpenseReportPartTwo(entries):
         elif i+j+k == 2020:
           print(f"{i}, {j}, and {k} sum to 2020")
           return i*j*k
-
   # If none matches, return 0
   return 0
-        
-
 
 
 if __name__ == "__main__":
@@ -42,7 +38,7 @@ if __name__ == "__main__":
   with open(sys.argv[1], "r") as f:
     for entry in f:
       entries.append(int(entry.strip("\n")))
-  
+      
   # Part 1
   print(fixExpenseReport(entries))
   
