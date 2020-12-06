@@ -39,22 +39,21 @@ def find_unique_answers(answer_list):
   return form_answers
 
 
-def parse_input(args):
+def parse_input(f):
   answer_list = []
-  
-  with open(args, "r") as f:
-    raw_input = f.read().split("\n\n")
+  raw_input = f.read().split("\n\n")
     
-    for line in raw_input:
-      answer = line.split("\n")
-      answer_list.append(answer)
+  for line in raw_input:
+    answer = line.split("\n")
+    answer_list.append(answer)
       
   return answer_list
 
 
 if __name__ == "__main__":
-  form_answers = parse_input(sys.argv[1])
-  
+  with open(sys.argv[1], "r") as f:
+    form_answers = parse_input(f)
+    
   # Part 1: Sum of answer counts
   unique_answers = find_unique_answers(form_answers)
   answer_counts = count_answers(unique_answers)
